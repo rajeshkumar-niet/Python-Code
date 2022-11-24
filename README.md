@@ -1,2 +1,1 @@
-# Linked_List
-Linked List code 
+Python Codes

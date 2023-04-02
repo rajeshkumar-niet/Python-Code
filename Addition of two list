@@ -1,0 +1,50 @@
+# Problem Statement : 
+# take two list as input from user and return a list of sum of given input list
+
+# taking value of second array from user  
+n = int(input("Enter lentgh of first list : "))
+a = []
+num =0
+print("Enter string : ")
+while(num<n):
+    temp = int(input())
+    if(0<=temp and temp<=9):
+        a.append(temp)
+        num= num+1
+    else:
+        print("Enter a number from 0 to 9 ")
+
+# taking value of second array from user 
+m = int(input("Enter lentgh of second list : "))
+b = []
+num =0
+print("Enter string : ")
+while(num<m):
+    temp = int(input())
+    if(0<=temp and temp<=9):
+        b.append(temp)
+        num= num+1
+    else:
+        print("Enter a number from 0 to 9 ")
+
+print("First s=array is : ",a)
+print("Second array is : ",b)
+
+# first we are reversing the string
+maxi = max(len(a),len(b))+1
+# print("Maximum legth +1 : ",maxi)
+x = a[::-1]
+y = b[::-1]
+
+x = x+[0]*(maxi - len(x))
+y = y+[0]*(maxi - len(y))
+
+out = []
+re = 0
+for i in range(len(x)):
+    temp = x[i]+y[i]
+    ad = temp%10 + re
+    re = temp//10
+    out.append(ad)
+out.reverse()
+print("Sum of two lists is : ",out)
